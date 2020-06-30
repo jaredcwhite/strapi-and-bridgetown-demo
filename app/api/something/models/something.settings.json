@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "somethings",
+  "info": {
+    "name": "Something"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "age": {
+      "type": "integer"
+    }
+  }
+}

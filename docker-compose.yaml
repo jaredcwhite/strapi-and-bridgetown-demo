@@ -1,0 +1,28 @@
+version: '3'
+services:
+  strapi:
+    image: strapi/strapi
+    environment:
+      DATABASE_CLIENT: mongo
+      DATABASE_NAME: strapi
+      DATABASE_HOST: mongo
+      DATABASE_PORT: 27017
+      DATABASE_USERNAME: strapi
+      DATABASE_PASSWORD: strapi
+    links:
+      - mongo:mongo
+    volumes:
+      - ./app:/srv/app
+      - ./bridgetown:/bridgetown
+    ports:
+      - '1337:1337'
+
+  mongo:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: strapi
+      MONGO_INITDB_ROOT_PASSWORD: strapi
+    volumes:
+      - ./data/db:/data/db
+    ports:
+      - '27017:27017'
