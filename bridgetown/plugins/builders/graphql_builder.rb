@@ -1,5 +1,3 @@
-require "graphlient"
-
 class GraphqlBuilder < SiteBuilder
   graphql :somethings do
     query {
