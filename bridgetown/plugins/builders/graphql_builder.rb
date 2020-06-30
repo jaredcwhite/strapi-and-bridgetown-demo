@@ -13,8 +13,7 @@ class GraphqlBuilder < SiteBuilder
   end
 
   def build
-    # Loop through the posts data and create new post documents
-    p "Queries!", queries
+    # Loop through the data and create new documents
     queries.somethings.each do |something|
       # Turn the title into a slug: I'm a Title -> im-a-title
       slug = Bridgetown::Utils.slugify(something.title)
